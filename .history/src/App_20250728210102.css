@@ -335,7 +335,7 @@ p {
   padding: 0;
 }
 .hero-image {
-  width: 500px;
+  width: 400px;
   height: 280px;
   object-fit: cover;
   border-radius: 16px;

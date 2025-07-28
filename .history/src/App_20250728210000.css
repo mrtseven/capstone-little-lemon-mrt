@@ -268,7 +268,7 @@ p {
 /* Hero Section Styles */
 .hero-section {
   width: 100vw;
-  background: #324218;
+  background: #324248;
   margin: 0;
   padding: 0;
   display: flex;
@@ -335,8 +335,8 @@ p {
   padding: 0;
 }
 .hero-image {
-  width: 500px;
-  height: 280px;
+  width: 320px;
+  height: 260px;
   object-fit: cover;
   border-radius: 16px;
   box-shadow: 0 2px 16px rgba(0,0,0,0.10);

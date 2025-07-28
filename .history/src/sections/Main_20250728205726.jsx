@@ -99,7 +99,7 @@ export default function Main() {
       </section>
       <section className="testimonials-section">
         <div className="container">
-          <h2 className="specials-title" style={{color:'#2222'}}>Testimonials</h2>
+          <h2 className="specials-title" style={{color:'#222'}}>Testimonials</h2>
           <div className="testimonials-carousel">
             {visibleTestimonials.map((t, idx) => (
               <Testimonial key={t.name + idx} {...t} />
@@ -112,7 +112,7 @@ export default function Main() {
         </div>
       </section>
       <section className="about-section">
-        <div className="container about-container">
+        <div className="container ">
           <div className="about-text">
             <h2 className="about-title">Little Lemon</h2>
             <h3 className="about-subtitle">Chicago</h3>

@@ -114,7 +114,7 @@ export default function Main() {
       <section className="about-section">
         <div className="container about-container">
           <div className="about-text">
-            <h2 className="about-title">Little Lemon</h2>
+            <h2 className="about-title">Little Lemonx</h2>
             <h3 className="about-subtitle">Chicago</h3>
             <p>Little Lemon is a charming neighborhood bistro that serves simple food and classic cocktails in a lively but casual environment. The restaurant features a locally-sourced menu with daily specials.</p>
           </div>

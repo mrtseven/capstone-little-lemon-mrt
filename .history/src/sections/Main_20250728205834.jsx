@@ -76,7 +76,7 @@ export default function Main() {
       <section className="hero-section">
         <div className="container">
           <Hero
-            title="Little Lemon"
+            title="Little Lemoxn"
             location="Chicago"
             description="We are a family-owned Mediterranean restaurant, focused on traditional recipes served with a modern twist."
             cta="Reserve a Table"
