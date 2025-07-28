@@ -1,0 +1,965 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700;800&family=Markazi+Text:wght@400;500;700&display=swap');
+
+/* === Type System & Base Styles === */
+
+body {
+  font-family: 'Karla', Arial, sans-serif;
+  color: #222;
+  background: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+/* Display Title - Medium 64pt */
+h1 {
+  font-family: 'Markazi Text', serif;
+  font-size: 64px;
+  font-weight: 500;
+  margin-bottom: 0.25em;
+  line-height: 1.1;
+}
+
+/* Sub title - keep close to display */
+h2 {
+  font-family: 'Markazi Text', serif;
+  font-size: 40px;
+  font-weight: 400;
+  margin-bottom: 0.25em;
+  line-height: 1.2;
+}
+
+/* Regular 40pt (for h3) */
+h3 {
+  font-family: 'Markazi Text', serif;
+  font-size: 40px;
+  font-weight: 400;
+  margin-bottom: 0.25em;
+  line-height: 1.2;
+}
+
+/* Section Title! Uppercase 20pt Extra Bold */
+h4 {
+  font-family: 'Markazi Text', serif;
+  font-size: 20px;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 0.5em;
+  line-height: 1.2;
+}
+
+/* Card Title 18pt Bold */
+h5 {
+  font-family: 'Karla', Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+  line-height: 1.2;
+}
+
+/* Category/Section 16pt Extra Bold */
+h6 {
+  font-family: 'Karla', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+  line-height: 1.2;
+}
+
+/* Paragraph text regular 16pt, 1.5 line height */
+p {
+  font-family: 'Karla', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 1em;
+  color: #222;
+  max-width: 65ch;
+}
+
+/* Lead text (use .lead for emphasis) */
+.lead {
+  font-family: 'Karla', Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #222;
+  margin-bottom: 0.5em;
+}
+
+/* Highlight text (e.g. price) */
+.highlight {
+  font-family: 'Karla', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #495E57;
+}
+
+/* Section/Category bold (for span or strong) */
+.bold {
+  font-family: 'Karla', Arial, sans-serif;
+  font-weight: 700;
+}
+.extra-bold {
+  font-family: 'Karla', Arial, sans-serif;
+  font-weight: 800;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+
+/* Accent colors */
+.accent-green {
+  color: #495E57;
+}
+.accent-yellow {
+  color: #F4CE14;
+}
+.bg-accent-green {
+  background: #495E57;
+}
+.bg-accent-yellow {
+  background: #F4CE14;
+}
+
+/* Rounded corners utility */
+.rounded-16 {
+  border-radius: 16px;
+}
+
+/* Container for the navbar */
+.navbar {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  padding: 16px 40px; 
+  font-family: 'Arial', sans-serif;
+  
+}
+
+/* Logo and brand */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo img {
+  height: 38px; /* Adjust as needed */
+  margin-right: 8px;
+  object-fit: cover;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  color: #CFC12D; /* Lemon yellow, adjust as necessary */
+  letter-spacing: 2px;
+  font-size: 1.1rem;
+  display: none !important;
+}
+
+/* Navigation links */
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  gap: 28px; /* Space between menu items */
+}
+
+.navbar-menu a {
+  text-decoration: none;
+  color: #222;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  padding-bottom: 8px;
+  transition: color 0.2s;
+}
+
+.navbar-menu a:hover {
+  color: #CFC12D; /* Highlight on hover */
+}
+
+/* Hamburger styles */
+.navbar-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 16px;
+  z-index: 1002;
+}
+.hamburger-bar {
+  width: 24px;
+  height: 3px;
+  background: #222;
+  margin: 3px 0;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+/* Responsive styles */
+@media (max-width: 900px) {
+  .navbar {
+    padding: 16px 20px 0 20px;
+  }
+  .navbar-brand {
+    display: inline;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-menu {
+    position: absolute;
+    top: 64px;
+    right: 0;
+    left: 0;
+    background: #fff;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: 24px 32px 24px 32px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+    display: none;
+    z-index: 1001;
+  }
+  .navbar-menu.open {
+    display: flex;
+  }
+  .navbar-menu a {
+    width: 100%;
+    padding: 16px 0;
+    font-size: 1.1rem;
+    border-bottom: 1px solid #eee;
+  }
+  .navbar-hamburger {
+    display: flex;
+  }
+  .navbar {
+    position: relative;
+  }
+}
+
+@media (min-width: 769px) {
+  .navbar-menu {
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    gap: 28px;
+  }
+  .navbar-hamburger {
+    display: none;
+  }
+  .navbar-brand {
+    display: inline;
+  }
+}
+
+/* Hero Section Styles */
+.hero-section {
+  width: 100vw;
+  background: #757575;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 48px;
+}
+.hero-section .container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 48px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.hero-content {
+  flex: 1 1 0;
+  max-width: 420px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hero-title {
+  font-size: 40px;
+  font-family: 'Markazi Text', serif;
+  font-weight: 700;
+  color: #F4CE14;
+  margin-bottom: 0.1em;
+}
+.hero-location {
+  font-size: 24px;
+  font-family: 'Karla', Arial, sans-serif;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 0.5em;
+}
+.hero-description {
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 2em;
+}
+.hero-cta {
+  font-family: 'Karla', Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #222;
+  background: #F4CE14;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 32px;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background 0.2s;
+}
+.hero-cta:hover {
+  background: #ffe066;
+}
+.hero-image-wrapper {
+  flex: 1 1 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0;
+}
+.hero-image {
+  width: 320px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+}
+@media (max-width: 900px) {
+  .hero-section .container {
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+    padding: 24px 0;
+  }
+  .hero-image {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+  }
+}
+
+/* Dish Card Styles */
+.dish-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  overflow: hidden;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.dish-card-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.dish-card-body {
+  padding: 16px 16px 12px 16px;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0;
+  min-height: 180px;
+}
+.dish-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+.dish-card-title {
+  font-size: 1.1rem;
+  font-family: 'Karla', Arial, sans-serif;
+  font-weight: 700;
+  margin: 0;
+  color: #222;
+}
+.dish-card-price {
+  font-size: 1rem;
+  font-family: 'Karla', Arial, sans-serif;
+  font-weight: 500;
+  color: #EE9972;
+  margin-left: 8px;
+}
+.dish-card-desc {
+  font-size: 0.97rem;
+  color: #495E57;
+  margin: 0 0 16px 0;
+  font-family: 'Karla', Arial, sans-serif;
+}
+.dish-card-cta {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #222;
+  cursor: pointer;
+  gap: 6px;
+  margin-top: auto;
+}
+.dish-card-cta-icon {
+  font-size: 1.2em;
+  margin-left: 2px;
+}
+
+/* Specials Section Styles */
+.specials-section {
+  margin: 0;
+  padding: 0 0 32px 0;
+}
+.specials-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  padding-top: 8px;
+}
+.specials-title {
+  font-size: 2rem;
+  font-family: 'Markazi Text', serif;
+  font-weight: 700;
+  margin: 0;
+  color: #222;
+}
+.specials-menu-btn {
+  font-family: 'Karla', Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #222;
+  background: #F4CE14;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 28px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.specials-menu-btn:hover {
+  background: #ffe066;
+}
+.specials-cards-row {
+  display: flex;
+  gap: 24px;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+@media (max-width: 900px) {
+  .specials-cards-row {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+  .specials-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
+
+/* Grid Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1240px) {
+  .container {
+    max-width: 100vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
+/* Testimonial Card Styles */
+.testimonial-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  padding: 20px 20px 16px 20px;
+  width: 320px;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0 auto;
+}
+.testimonial-rating {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #495E57;
+  margin-bottom: 10px;
+}
+.testimonial-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.testimonial-img {
+  width: 44px;
+  height: 44px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #F4CE14;
+}
+.testimonial-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #222;
+}
+.testimonial-text {
+  font-size: 1rem;
+  color: #495E57;
+  margin: 0;
+  font-family: 'Karla', Arial, sans-serif;
+}
+
+/* Testimonials Section (Carousel) */
+.testimonials-section {
+  background: #F4CE14;
+  padding: 48px 0;
+  width: 100vw;
+  margin: 0;
+}
+.testimonials-section .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.testimonials-carousel {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  align-items: stretch;
+  margin-top: 24px;
+  width: 100%;
+}
+.testimonials-carousel-controls {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  justify-content: center;
+}
+.testimonials-carousel-btn {
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 1.2rem;
+  color: #495E57;
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  transition: background 0.2s;
+}
+.testimonials-carousel-btn:hover {
+  background: #ffe066;
+}
+@media (max-width: 1100px) {
+  .testimonials-carousel {
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+  }
+  .testimonial-card {
+    width: 90vw;
+    max-width: 340px;
+  }
+}
+
+.about-section {
+  padding: 64px 0 64px 0;
+  background: #fff;
+}
+.about-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 48px;
+}
+.about-text {
+  flex: 1 1 0;
+  max-width: 480px;
+}
+.about-title {
+  font-family: 'Markazi Text', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 0.2em 0;
+  color: #222;
+}
+.about-subtitle {
+  font-family: 'Karla', Arial, sans-serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #757575;
+  margin: 0 0 1.2em 0;
+}
+.about-text p {
+  font-size: 1rem;
+  color: #222;
+  margin-bottom: 1em;
+}
+.about-images {
+  flex: 1 1 0;
+  position: relative;
+  min-width: 320px;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.about-img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  position: absolute;
+  background: #e0e0e0;
+}
+.about-img-bottom {
+  left: 0;
+  top: 40px;
+  z-index: 1;
+}
+.about-img-top {
+  left: 80px;
+  top: -40px;
+  z-index: 2;
+}
+@media (max-width: 900px) {
+  .about-container {
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+  }
+  .about-images {
+    min-width: 220px;
+    min-height: 220px;
+    height: 260px;
+  }
+  .about-img {
+    width: 180px;
+    height: 180px;
+  }
+  .about-img-top {
+    left: 60px;
+    top: -20px;
+  }
+  .about-img-bottom {
+    left: 0;
+    top: 40px;
+  }
+}
+
+@media (min-width: 901px) {
+  .about-img {
+    width: 300px;
+    height: 300px;
+  }
+  .about-images {
+    min-width: 340px;
+    min-height: 340px;
+    height: 340px;
+  }
+  .about-img-top {
+    left: 110px;
+    top: -50px;
+  }
+  .about-img-bottom {
+    left: 0;
+    top: 60px;
+  }
+}
+
+.footer-section {
+  background: #495E57;
+  color: #fff;
+  padding: 48px 0 32px 0;
+}
+.footer-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 32px;
+  align-items: flex-start;
+}
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.footer-logo-col {
+  align-items: flex-start;
+}
+.footer-logo {
+  width: 56px;
+  height: auto;
+  margin-bottom: 8px;
+}
+.footer-heading {
+  font-size: 1.1rem;
+  font-family: 'Karla', Arial, sans-serif;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #F4CE14;
+}
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+.footer-links a:hover {
+  color: #F4CE14;
+}
+@media (max-width: 900px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+}
+@media (max-width: 600px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .footer-section {
+    padding: 32px 0 20px 0;
+  }
+}
+
+/* Consistent Section Padding and White Space */
+.hero-section,
+.specials-section,
+.testimonials-section,
+.about-section {
+  padding-top: 64px !important;
+  padding-bottom: 64px !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+@media (max-width: 900px) {
+  .hero-section,
+  .specials-section,
+  .testimonials-section,
+  .about-section {
+    padding-top: 32px !important;
+    padding-bottom: 32px !important;
+  }
+}
+
+/* Remove extra margin from first and last child in each section */
+.hero-section > .container > :first-child,
+.specials-section > .container > :first-child,
+.testimonials-section > .container > :first-child,
+.about-section > .container > :first-child {
+  margin-top: 0 !important;
+}
+.hero-section > .container > :last-child,
+.specials-section > .container > :last-child,
+.testimonials-section > .container > :last-child,
+.about-section > .container > :last-child {
+  margin-bottom: 0 !important;
+}
+
+.footer-section {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+@media (max-width: 600px) {
+  .footer-section {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+}
+
+/* Remove section-specific padding/margin overrides */
+.about-section,
+.specials-section,
+.testimonials-section,
+.hero-section {
+  background-clip: padding-box;
+}
+
+.hero-section {
+  padding-top: 32px !important;
+  padding-bottom: 32px !important;
+}
+.about-section {
+  padding-top: 96px !important;
+  padding-bottom: 64px !important;
+}
+
+@media (max-width: 900px) {
+  .hero-section {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+  }
+  .about-section {
+    padding-top: 48px !important;
+    padding-bottom: 32px !important;
+  }
+}
+
+
+/* Form Styles */
+.reservation-form {
+  max-width: 320px;
+  margin: 3rem auto;
+  padding: 32px 24px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 32px rgba(63, 63, 63, 0.07);
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* make form use flex column with spacing between groups */
+.reservation-form .input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+
+.form-label {
+  font-weight: 500;
+  color: #36454f;
+}
+
+.form-input {
+  padding: 9px 12px;
+  border: 1px solid #bfc7d6;
+  border-radius: 5px;
+  font-size: 1rem;
+  background: #fafbfc;
+  transition: border-color 0.2s;
+}
+
+.form-input:focus {
+  border-color: #ffc300;
+  outline: none;
+  background: #fffde7;
+}
+
+.form-submit {
+  background-color: #F4CE14;
+  color: #333;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form-submit:hover,
+.form-submit:focus {
+  background: #ffee99;
+  color: #000;
+}
+
+.form-submit:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.form-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.form-cancel {
+  background-color: transparent;
+  color: #888;
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.form-cancel:hover {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.8em;
+}
+
+.input-error {
+    border: 1px solid red;
+}
+
+/* Booking Confirmation Styles */
+.booking-confirmation {
+  max-width: 500px;
+  margin: 3rem auto;
+  padding: 32px 24px;
+  background: #f9f9f9;
+  border: 1px solid #495E57;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.08);
+}
+
+.booking-confirmation h2 {
+  font-family: 'Markazi Text', serif;
+  font-size: 2.5rem;
+  color: #495E57; /* Little Lemon Green */
+  margin-bottom: 0.5em;
+}
+
+.booking-confirmation p {
+  font-family: 'Karla', Arial, sans-serif;
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.6;
+}
